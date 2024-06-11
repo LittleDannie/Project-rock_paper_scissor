@@ -10,7 +10,7 @@ function getComputerChoice() { //  gets the computer choice for the game
 }
 
 function getHumanChoice() { //gets the human choice for the game
-    return prompt('Rock, Paper or Scissors?', 'Rock').toString().toLowerCase();
+    return prompt('Rock, Paper or Scissors?', 'Rock').toLowerCase();
 }
 
 function playRound(humanChoice, computerChoice) { // plays one round of the game
