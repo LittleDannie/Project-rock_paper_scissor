@@ -1,16 +1,15 @@
-// Get player choice
-// Check if the player choice is either rock, paper or scissor
-// Compare player and computer's choice
+const selections = document.querySelectorAll('button');
+const display = document.querySelector('div');
+const p1 = display.firstElementChild;
+const p2 = display.lastElementChild;
+
+
 let humanScore = 0;
 let computerScore = 0;
 
 function getComputerChoice() { //  gets the computer choice for the game
     const computerChoice = ['rock', 'paper', 'scissors'];
     return computerChoice[Math.floor(Math.random() * computerChoice.length)];
-}
-
-function getHumanChoice() { //gets the human choice for the game
-    return prompt('Rock, Paper or Scissors?', 'Rock').toLowerCase();
 }
 
 function playRound(humanChoice, computerChoice) { // plays one round of the game
@@ -45,20 +44,34 @@ function playRound(humanChoice, computerChoice) { // plays one round of the game
     }
 }
 
-function playGame() { // loops through 1 - 5 to play 5 rounds of the game
-    for (let i = 0; i < 5; i++) { // loops through 1 - 5
-        displayResult(playRound(getHumanChoice(), getComputerChoice()));
+selections.forEach((selection) => {
+    selection.addEventListener('click', (e) => {
+        displayResult(playRound(e.target.textContent.toLowerCase(), getComputerChoice()));
         displayScore();
-    }
-}
+
+        if (humanScore == 5 || computerScore == 5) {
+            endGame();
+            return;
+        }
+    });
+});
 
 function displayResult(message) { // displays the game result on the console
-    console.log(message);
+    p1.textContent = message;
 }
 
 function displayScore() {
-    console.log(`player ${humanScore} : ${computerScore} computer`);
-    console.log('');
+    p2.textContent = `player ${humanScore} : ${computerScore} computer`;
 }
 
-playGame();
+function endGame() {
+    p1.textContent = `player ${ humanScore } : ${ computerScore } computer`;
+
+    if (humanScore > computerScore) {
+        p2.textContent = `player wins the game with ${humanScore} points`;
+    } else {
+        p2.textContent = `computer wins the game with ${computerScore} points`;
+    }
+}
+
+// playGame();
