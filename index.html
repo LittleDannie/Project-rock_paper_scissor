@@ -5,21 +5,75 @@
     <meta charset="uTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="stylesheet" href="./styles.css" />
+
+    <script src="./script.js" defer></script>
+
     <title>Rock Paper Scissor</title>
 </head>
 
 <body>
 
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
+    <h1>
+        <span class="h1-rock">ROCK</span>
 
-    <div>
-        <p></p>
-        <p></p>
+        <span class="h1-paper">PAPER</span>
+
+        <span class="h1-scissors">SCISSORS</span>
+    </h1>
+
+    <div class="playerInput">
+        <p>
+            What's your name player?
+        </p>
+
+        <input type="text" name="player" id="player" placeholder="Grandeor" />
+        <input type="submit" name="submit" />
     </div>
 
+    <div class="playGame">
+        <div class="openingText">
+            Will you be the first to get 5
+            <span class="magic">magic</span>
+            ?
+        </div>
+
+        <div class="scoreCard">
+        </div>
+
+        <ul class="cards">
+            <li class="card">
+                <img src="./images/rock_hand_gesture.jpg" alt="A card depicting a hand rock sign" id="rock">
+            </li>
+
+            <li class="card">
+                <img src="./images/paper_hand_gesture.jpg" alt="A card depicting a hand paper sign" id="paper">
+            </li>
+
+            <li class="card">
+                <img src="./images/scissors_hand_gesture.jpg" alt="A card depicting a hand paper sign" id="scissors">
+            </li>
+        </ul>
+
+        <ul class="result">
+            <li class="messageBoard"></li>
+        </ul>
+
+        <p class="text1">Choose your card wisely</p>
+
+        <div class="gameOver">
+            <p>Game Over</p>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <input type="button" value="Start" id="start" />
+    </div>
+
+    <input type="button" value="Play Again" id="playAgain" />
+
+    <!-- x -->
+
 </body>
-<script src="./script.js"></script>
 
 </html>
