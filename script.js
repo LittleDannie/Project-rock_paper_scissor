@@ -18,7 +18,7 @@ const gameOver = document.querySelector('.gameOver');
 const declaration = document.createElement('div');
 const playAgain = document.querySelector('#playAgain');
 
-const SECONDS_2 = 0;
+const ONE_AND_HALF_SECOND = 1500;
 
 let playerScore = 0;
 let computerScore = 0;
@@ -79,7 +79,7 @@ cards.forEach((card) => {
             }
             setTimeout(delayResult, 2000);
         } else {
-            setTimeout(showPlayingCards, SECONDS_2);
+            setTimeout(showPlayingCards, ONE_AND_HALF_SECOND);
         }
     });
 });
